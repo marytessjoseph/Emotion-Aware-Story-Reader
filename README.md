@@ -28,6 +28,10 @@
 - `story.txt` – Sample input story file (edit or replace as needed)
 - `README.md` – Project documentation
 
+## Requirements
+- textblob
+- gTTS
+- nltk
 
 ## 📌 Setup Instructions
 
