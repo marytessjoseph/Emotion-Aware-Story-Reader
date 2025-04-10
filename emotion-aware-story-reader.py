@@ -12,6 +12,11 @@ import os
 import random
 import time
 
+# Make sure folders exist (auto-create if missing)
+os.makedirs("Input", exist_ok=True)
+os.makedirs("Output", exist_ok=True)
+
+
 # Step 1: Get input 
 #text = input("Enter a sentence from the story: ")
 '''
@@ -24,12 +29,14 @@ story = [
 ]
 
 '''
-
+'''
 # Read story lines from a text file
 with open("story.txt", "r", encoding="utf-8") as file:
     story = [line.strip() for line in file if line.strip()]
 
-
+'''
+with open("Input/story.txt", "r", encoding="utf-8") as file:
+    story = [line.strip() for line in file if line.strip()]
 
 # Step 2: Analyze sentiment
 '''
@@ -73,6 +80,8 @@ def speak(text, emotion):
 
 speak(text, emotion)
 '''
+
+'''
 def speak(text, emotion):
     if emotion == "positive":
         text = "Smile, " + text
@@ -86,6 +95,23 @@ def speak(text, emotion):
     tts.save(filename)
     os.system(f"start {filename}")  # Use 'afplay' or 'xdg-open' on macOS/Linux
     time.sleep(4)
+'''
+
+
+def speak(text, emotion):
+    if emotion == "positive":
+        text = "Smile, " + text
+    elif emotion == "negative":
+        text = "Hmm, " + text
+    else:
+        text = "Okay, " + text
+
+    tts = gTTS(text=text, lang='en')
+    filename = f"Output/line_{random.randint(1000,9999)}.mp3"
+    tts.save(filename)
+    os.system(f"start {filename}")
+    time.sleep(4)
+
 
 #Loop through story
 for line in story:
