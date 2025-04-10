@@ -65,5 +65,3 @@ Developed with ❤️ by [marytessjoseph](https://github.com/marytessjoseph)
 This project is open source and available under the [MIT License](LICENSE).
 ```
 
-
-Let me know if you'd like a matching `LICENSE` file (MIT or any other), or if you'd like to personalize the author section with a short bio or email! 😊
